@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 158.89 229.51">
+  <defs>
+    <style>
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
+        stroke: #000;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-8, .cls-3, .cls-6, .cls-7 {
+        fill: #fff;
+      }
+
+      .cls-1, .cls-3, .cls-4, .cls-5 {
+        stroke-linecap: round;
+      }
+
+      .cls-1, .cls-6 {
+        stroke-width: 2.5px;
+      }
+
+      .cls-2, .cls-3, .cls-7 {
+        stroke-width: 5px;
+      }
+
+      .cls-4 {
+        stroke-width: 8px;
+      }
+
+      .cls-4, .cls-5 {
+        fill: none;
+      }
+
+      .cls-5 {
+        stroke-width: 10px;
+      }
+    </style>
+  </defs>
+  <g id="YinYang">
+    <path id="white_sway" data-name="white sway" class="cls-7" d="M78.37,48.81c-20.71,0-37.5,16.79-37.5,37.5s16.79,37.5,37.5,37.5,37.5,16.79,37.5,37.5-16.79,37.5-37.5,37.5h.5c41.42,0,75-33.58,75-75S120.3,48.81,78.87,48.81"/>
+    <path id="black_sway" data-name="black sway" class="cls-2" d="M79.37,198.81c20.71,0,37.5-16.79,37.5-37.5s-16.79-37.5-37.5-37.5-37.5-16.79-37.5-37.5,16.79-37.5,37.5-37.5h-.5C37.45,48.81,3.87,82.39,3.87,123.81s33.58,75,75,75"/>
+    <circle id="white_dot" data-name="white dot" class="cls-8" cx="77.19" cy="160.44" r="18.75"/>
+    <circle id="black_dot" data-name="black dot" cx="77.19" cy="83.44" r="18.75"/>
+  </g>
+  <g id="Flower">
+    <g id="full_flower" data-name="full flower">
+      <path id="stem" class="cls-5" d="M103.37,45.31c7.71,4.35,40.18,23.77,48.5,60.5,5.7,25.17-2.08,49-6,61-3.79,11.6-8.42,20.74-12,27"/>
+      <g id="flower">
+        <path id="rsmall" class="cls-1" d="M109.34,26.43c8.88-6.68,6.57-13.26-4.1-19.56-6.35,10.1-4.94,16.82,4.1,19.56Z"/>
+        <path id="lsmall" class="cls-1" d="M89.16,33.03c5.37-9.72,.57-14.79-11.75-16.17-1.66,11.81,2.37,17.37,11.75,16.17Z"/>
+        <path id="lbig" class="cls-3" d="M104.11,52.78c1.53-19.39-11.55-27.29-35.23-26.25,7.03,22.14,19.13,31.16,35.23,26.25Z"/>
+        <path id="rbig" class="cls-3" d="M114.71,47.37c17.06-8.43,17.29-23.55,4.8-43.23-15.17,17.1-16.82,31.95-4.8,43.23Z"/>
+        <path id="center" class="cls-3" d="M110.45,51.52c9.15-17.83-.05-31.93-22.8-42.74-2.17,24.73,5.66,39.41,22.8,42.74Z"/>
+      </g>
+    </g>
+  </g>
+  <g id="flower_2" data-name="flower 2">
+    <path id="stem-2" data-name="stem" class="cls-4" d="M27.68,193.19c-6.33-8.56-21.88-31.95-23.53-65.94-1.64-33.67,11.3-58.27,16.73-67.44"/>
+    <g id="flower-2" data-name="flower">
+      <path id="rsmall-2" data-name="rsmall" class="cls-6" d="M37.45,205.58c7.99-.12,9.59,4.64,6.3,12.93-8.06-2.94-10.23-7.38-6.3-12.93Z"/>
+      <path id="lsmall-2" data-name="lsmall" class="cls-6" d="M23.07,210.72c7.34,3.16,6.85,8.16,.46,14.37-6.15-5.98-6.31-10.92-.46-14.37Z"/>
+      <path id="lbig-2" data-name="lbig" class="cls-7" d="M22.85,192.9c9.42,10.35,5.47,20.61-8.45,30.47-5.77-15.68-2.87-26.15,8.45-30.47Z"/>
+      <path id="rbig-2" data-name="rbig" class="cls-7" d="M31.27,191.3c13.41-2.74,20.22,5.76,21.8,22.45-16.17-3.03-23.66-10.74-21.8-22.45Z"/>
+      <path id="center-2" data-name="center" class="cls-7" d="M27.01,190.82c13.07,6.1,14.06,18.17,5.9,34.36-12.14-13.1-14.17-24.9-5.9-34.36Z"/>
+    </g>
+  </g>
+</svg>

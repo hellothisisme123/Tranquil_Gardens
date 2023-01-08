@@ -1,0 +1,185 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.contact_type {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.contact_type:nth-child(odd) {
+    background-color: var(--color_1);   
+}
+
+.contact_type:nth-child(odd) > * {
+    color: var(--color_2);
+}
+
+.contact_type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: clip-path 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.contact_type > h1 {
+    scale: 1.3;
+    transition: scale 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.contact_type:hover > h1 {
+    scale: 1.5;
+    cursor: pointer;
+}
+
+/* .contact_type > h1: */
+
+.contact_type:nth-child(odd):hover > h1 {
+    text-shadow: 0 0 0.25rem var(--color_2);
+}
+
+
+.contact_type:nth-child(even):hover > h1 {
+    text-shadow: 0 0 0.25rem var(--color_1);
+}
+
+.left {
+    clip-path: polygon(0 0, 85% 0, 100% 100%, 0 100%);
+    padding: 0% 20% 10% 10%;
+    /* grid-column: span 2; */
+}
+
+.middle {
+    padding: 0% 5% 10% 5%;
+}
+
+.right {
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%);
+    padding: 0% 10% 10% 25%;
+}
+
+.transitional {
+    /* display: none; */
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    /* pointer-events: none; */
+    background-color: var(--color_1);
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.transitional > .contact_section {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact_section.web_complaint {
+    margin-top: 10vh;
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    grid-template-rows: 1fr 10fr;
+}
+
+.contact_section.web_complaint > .title {
+    /* display: block; */
+    grid-column: span 2;
+    grid-row: span 1;
+    text-align: center;
+    /* background-color: red; */
+}
+
+.web_complaint > .personalInfo {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: grid;
+    grid-template-rows: 1rem 1fr;
+}
+
+.web_complaint > .personalInfo::after {
+    content: '';
+    
+    height: 85%;
+    width: 0.5vw;
+    background-color: var(--color_1);
+    filter: drop-shadow(0 0 2px var(--color_1));
+    
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    translate: 50% -50%;
+    border-radius: 1000px;
+}
+
+.personalInfo > h1 {
+    text-align: center;
+}
+
+.personalInfoForm {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 10% 5%;
+    box-sizing: border-box;
+    justify-content: flex-start;
+    height: 100%;
+    gap: 3%;
+}
+
+form > label {
+    font-size: 1.75rem;
+    display: flex;
+    gap: 2%;
+    align-items: center;
+}
+
+form > label > input, form > label > select {
+    outline: none;
+    border-radius: 5px;
+    height: 1.75rem;
+    font-size: 1.5rem;
+    background-color: var(--color_3);
+    flex-grow: 1;
+    border: 2px solid #fff;
+    padding: 0.5% 1%;
+}
+
+form > label > select {
+    height: 2rem;
+    padding: 0 2%;
+}
+
+form > label > input:active, form > label > select:active {
+    background-color: var(--color_2);
+}
+
+button[type="submit"] {
+    border-radius: 1000px;
+    outline: none;
+    border: 2px solid #fff;
+    height: 2.5rem;
+    width: 60%;
+    align-self: center;
+    font-size: 1.75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color_3);
+}
+
+button[type="submit"]:active, button[type="submit"]:hover {
+    background-color: var(--color_2);
+}

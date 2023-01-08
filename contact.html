@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="./styles/apple_watch_responsive_1.2.css">
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/nav.css">
+    <link rel="stylesheet" href="./styles/contact.css">
+
+    <script src="./js/nav.js" type="module" defer></script>
+    <script src="./js/contact.js" defer></script>
+
+    <link rel="shortcut icon" href="./production/svg/YinYangLogo.svg" type="image/x-icon">
+
+    
+    <title>Contact</title>
+</head>
+<body>
+    <nav>
+        <a href="./index.html" class="nav_logo">
+            <img src="./production/svg/YinYangLogo.svg" alt="">
+        </a>
+        <div class="nav_item home_nav_item">
+            <a href="./index.html">
+                Home
+            </a>
+            <div class="nav_icon">
+                <img src="./production/svg/shovel.svg" alt="">
+            </div>
+        </div>
+        <div class="nav_item">
+            <a href="./about.html">
+                About
+            </a>
+            <div class="nav_icon">
+                <img src="./production/svg/about.svg" alt="">
+            </div>
+        </div>
+        <div class="nav_item">
+            <a href="./growing.html">
+                Growing
+            </a>
+            <div class="nav_icon">
+                <img src="./production/svg/shovel.svg" alt="">
+            </div>
+        </div>
+        <div class="nav_item">
+            <a href="./faq.html">
+                FAQ
+            </a>
+            <div class="nav_icon">
+                <img src="./production/svg/question_mark.svg" alt="">
+            </div>
+        </div>
+        <div class="nav_item">
+            <a href="./contact.html">
+                Contact
+            </a>
+            <div class="nav_icon">
+                <img src="./production/svg/phone.svg" alt="">
+            </div>
+        </div>
+        <div class="nav_item">
+            <a href="./shop.html">
+                Shop
+            </a>
+            <div class="nav_icon">
+                <img src="./production/svg/shopping_basket.svg" alt="">
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="contact_type left">
+            <h1 data-type="suggestions">Suggestions</h1>
+        </div>
+
+        <div class="contact_type middle">
+            <h1 data-type="web_complaint">Website Complaints</h1>
+
+        </div>
+
+        <div class="contact_type right">
+            <h1 data-type="store_complaint">In Person Store Complaints</h1>
+        </div>
+
+        <div class="transitional">
+            <div class="contact_section suggestions" data-type="suggestions">
+                <h1 class="title" data-type="suggestions">Suggestions</h1>
+            </div>
+
+            <div class="contact_section web_complaint" data-type="web_complaint">
+                <h1 class="title" data-type="web_complaint">Website Complaints</h1>
+                <div class="personalInfo">
+                    <h1>Contacts Form</h1>
+                    <form class="personalInfoForm">
+                          <label for="FirstName">
+                            Firstname: 
+                            <input type="text" id="FirstName" placeholder="(optional)">
+                          </label>
+
+                          <label for="Lastname">
+                            Lastname: 
+                            <input type="text" id="Lastname" placeholder="(optional)">
+                          </label>
+                          
+                          <label for="Gender">
+                            Gender: 
+                            <select id="Gender">
+                                <option value="Anon">Prefer not to answer</option>
+                                <option value="Man">Man</option>
+                                <option value="Woman">Woman</option>
+                                <option value="Other">Other</option>
+                            </select>
+                          </label>
+
+                          <label for="Email">
+                            Email: 
+                            <input type="email" id="Email" placeholder="(optional)">
+                          </label>
+
+                          <label for="PhoneNumber">
+                            Phone Number: 
+                            <input type="text" id="PhoneNumber" placeholder="(optional)">
+                          </label>
+
+                          <button type="submit" class="submitBtn">Submit</button>
+                    </form>
+                </div>
+                <div class="complaintForm">
+                    <form>
+                        
+                    </form>
+
+                </div>
+            </div>
+
+            <div class="contact_section store_complaint" data-type="store_complaint">
+                <h1 class="title" data-type="store_complaint">In Person Store Complaints</h1>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

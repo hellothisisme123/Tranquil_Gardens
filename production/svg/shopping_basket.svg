@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62.76 49.91">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke-width: 3px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: currentcolor;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .cls-2 {
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="shopping_Basket" data-name="shopping Basket">
+    <polyline class="cls-1" points="4.44 23.97 58.32 23.97 61.26 13.89 51.19 48.41 11.57 48.41 1.5 13.89"/>
+    <line class="cls-1" x1="31.38" y1="23.97" x2="31.38" y2="48.41"/>
+    <line class="cls-1" x1="41.38" y1="23.97" x2="41.38" y2="48.41"/>
+    <line class="cls-1" x1="21.38" y1="23.97" x2="21.38" y2="48.41"/>
+    <path class="cls-2" d="M49.94,23.97h0c-9.83-30.63-27.3-30.63-37.13,0h0"/>
+  </g>
+</svg>

@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Calibri;
+    color: #fff;
+}
+
+:root {
+    --color_1: #EAD7D1;
+    --color_2: #1F1A38;
+    --color_3: #262045;
+    --color_4: #70F8BA;
+    --color_5: #034732;
+}
+
+html {
+    background-color: var(--color_2);
+    overflow-y: scroll;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+}
