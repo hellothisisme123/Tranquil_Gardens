@@ -1,10 +1,10 @@
 html {
-    overflow: hidden;
 }
 
 .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 5fr 1fr;
 }
 
 .contact_type {
@@ -30,12 +30,12 @@ html {
 }
 
 .contact_type > h1 {
-    scale: 1.3;
+    font-size: 2.5rem;
     transition: scale 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .contact_type:hover > h1 {
-    scale: 1.5;
+    scale: 1.3;
     cursor: pointer;
 }
 
@@ -79,7 +79,7 @@ html {
     grid-template-columns: repeat(3, 1fr);
 }
 
-.transitional[data-preClick] > * {
+.transitional[data-preClick] {
     display: none;
 }
 

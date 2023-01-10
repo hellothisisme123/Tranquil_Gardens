@@ -4,6 +4,10 @@
     top: 10vh;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 .bg_image {
     /* position: absolute; */
     width: 100%;

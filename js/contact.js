@@ -30,11 +30,14 @@ const aniTime = 750
 left.addEventListener('click', (e) => {
     console.log(left)
     // transitional.style.display = 'grid'
+    // transitional.style.display = 'grid'
     transitional.removeAttribute('data-preClick')
-    transitional.style.transition = `left ${aniTime}ms cubic-bezier(0.075, 0.82, 0.165, 1)`
-    transitional.style.left = '0'
-
-    clearSections(suggestions)
+    setTimeout(() => {
+        transitional.style.transition = `left ${aniTime}ms cubic-bezier(0.075, 0.82, 0.165, 1)`
+        transitional.style.left = '0'
+    
+        clearSections(suggestions)
+    }, 0);
 })
 
 middle.addEventListener('click', (e) => {
@@ -42,20 +45,26 @@ middle.addEventListener('click', (e) => {
     // transitional.style.display = 'grid'
     transitional.removeAttribute('data-preClick')
     transitional.style.backgroundColor = 'var(--color_2)'
-    transitional.style.transition = `left ${aniTime}ms cubic-bezier(0.075, 0.82, 0.165, 1)`
-    transitional.style.left = '0'
 
-    clearSections(webComplaints)
+    setTimeout(() => {
+        transitional.style.transition = `left ${aniTime}ms cubic-bezier(0.075, 0.82, 0.165, 1)`
+        transitional.style.left = '0'
+
+        clearSections(webComplaints)
+    }, 0);
 })
 
 right.addEventListener('click', (e) => {
     console.log(right)
     // transitional.style.display = 'grid'
     transitional.removeAttribute('data-preClick')
-    transitional.style.transition = `left ${aniTime}ms cubic-bezier(0.075, 0.82, 0.165, 1)`
-    transitional.style.left = '0'
 
-    clearSections(storeComplaints)
+    setTimeout(() => {
+        transitional.style.transition = `left ${aniTime}ms cubic-bezier(0.075, 0.82, 0.165, 1)`
+        transitional.style.left = '0'
+
+        clearSections(storeComplaints)
+    }, 0);
 })
 
 
