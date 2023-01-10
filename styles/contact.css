@@ -1,3 +1,7 @@
+html {
+    overflow: hidden;
+}
+
 .container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -75,6 +79,10 @@
     grid-template-columns: repeat(3, 1fr);
 }
 
+.transitional[data-preClick] > * {
+    display: none;
+}
+
 .transitional > .contact_section {
     padding: 0;
     margin: 0;
@@ -85,6 +93,8 @@
     align-items: center;
 }
 
+
+/* Website Complaints */
 .contact_section.web_complaint {
     margin-top: 10vh;
     display: grid;
@@ -93,11 +103,9 @@
 }
 
 .contact_section.web_complaint > .title {
-    /* display: block; */
     grid-column: span 2;
     grid-row: span 1;
     text-align: center;
-    /* background-color: red; */
 }
 
 .web_complaint > .personalInfo {
@@ -105,7 +113,9 @@
     height: 100%;
     position: relative;
     display: grid;
-    grid-template-rows: 1rem 1fr;
+    grid-template-rows: 3rem 1fr;
+    box-sizing: border-box;
+
 }
 
 .web_complaint > .personalInfo::after {
@@ -124,19 +134,24 @@
     border-radius: 1000px;
 }
 
-.personalInfo > h1 {
+.personalInfo > h1, .complaintDetails > h1 {
     text-align: center;
+    opacity: 0.8;
+    font-size: 1.8rem;
 }
 
-.personalInfoForm {
+form {
     display: flex;
     flex-direction: column;
     align-items: left;
-    padding: 10% 5%;
+    padding: 3rem 2rem;
     box-sizing: border-box;
     justify-content: flex-start;
     height: 100%;
-    gap: 3%;
+    gap: 4%;
+    flex-wrap: nowrap;
+
+    overflow: scroll;
 }
 
 form > label {
@@ -144,17 +159,25 @@ form > label {
     display: flex;
     gap: 2%;
     align-items: center;
+    flex-wrap: wrap;
 }
 
-form > label > input, form > label > select {
+form > label > input, form > label > select, form > label > textarea {
     outline: none;
+    resize: none;
     border-radius: 5px;
     height: 1.75rem;
     font-size: 1.5rem;
     background-color: var(--color_3);
     flex-grow: 1;
-    border: 2px solid #fff;
+    border: 2px solid var(--color_1);
     padding: 0.5% 1%;
+}
+
+form > label > textarea {
+    height: 10rem;
+    flex-basis: 100%;
+    background-color: var(--color_3);
 }
 
 form > label > select {
@@ -162,7 +185,7 @@ form > label > select {
     padding: 0 2%;
 }
 
-form > label > input:active, form > label > select:active {
+form > label > input:active, form > label > select:active, form > label > input:focus, form > label > select:focus, form > label > textarea:focus, form > label > textarea:active   {
     background-color: var(--color_2);
 }
 
@@ -180,6 +203,83 @@ button[type="submit"] {
     background-color: var(--color_3);
 }
 
-button[type="submit"]:active, button[type="submit"]:hover {
+button[type="submit"]:active, button[type="submit"]:focus, button[type="submit"]:hover {
     background-color: var(--color_2);
+}
+
+.complaintDetails {
+    display: grid;
+    width: 100%;
+    height: 100%;
+ 
+    display: grid;
+    grid-template-rows: 3rem 1fr;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*  */
+.contact_section.suggestions * {
+    color: var(--color_2);
+}
+
+.contact_section.suggestions {
+    margin-top: 10vh;
+    display: grid;
+    width: 100%;
+    grid-template-rows: 1fr 10fr;
+    grid-template-columns: 1fr;
+}
+
+.contact_section.suggestions > .title {
+    text-align: center;
+}
+
+.contact_section.suggestions > form {
+    /* background-color: red; */
+    width: 65%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    overflow-y: scroll;
+}
+
+.contact_section.suggestions > form::before, .contact_section.suggestions > form::after {
+    content: '';
+    display: block;
+    width: 0.5vw;
+    border-radius: 1000px;
+    background-color: var(--color_2);
+    filter: drop-shadow(0 0 3px var(--color_2));
+    height: 85%;
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    z-index: 2;
+}
+
+.contact_section.suggestions > form::before {
+    left: 1%;
+}
+
+.contact_section.suggestions > form::after {
+    right: 1%;
+}
+
+.contact_section.suggestions textarea, .contact_section.suggestions input, .contact_section.suggestions select, .contact_section.suggestions button {
+    background-color: var(--color_4);
+    border: 2px solid var(--color_2);
+}
+
+.contact_section.suggestions textarea:focus, .contact_section.suggestions input:focus, .contact_section.suggestions select:focus, .contact_section.suggestions button:focus, .contact_section.suggestions textarea:active, .contact_section.suggestions input:active, .contact_section.suggestions select:active, .contact_section.suggestions button:active {
+    background-color: var(--color_1);
 }

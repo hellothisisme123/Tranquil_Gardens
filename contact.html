@@ -87,15 +87,55 @@
             <h1 data-type="store_complaint">In Person Store Complaints</h1>
         </div>
 
-        <div class="transitional">
+        <div class="transitional" data-preClick>
             <div class="contact_section suggestions" data-type="suggestions">
                 <h1 class="title" data-type="suggestions">Suggestions</h1>
+                
+                <form class="plantSuggestionForm">
+                    <label for="FirstName">
+                        What types of plant do you want us add to our stock: 
+                        <select id="starRating" required>
+                            <option value="2">Other</option>
+                            <option value="1">Mushroom</option>
+                            <option value="2">Fern</option>
+                            <option value="2">Tree</option>
+                            <option value="2">Fruit</option>
+                            <option value="2">Vegetable</option>
+                            <option value="2">Flower</option>
+                            <option value="2">Moss</option>
+                            <option value="2">Cactus</option>
+                        </select>
+                    </label>
+
+                    <label for="ProblemCause">
+                        What is the name/s of the plant (scientific name if possible): 
+                        <input type="text" id="FirstName" placeholder="(required)" required>
+                    </label>
+
+                    <label for="starRating">
+                        Why do you believe we should supply this plant?: 
+                        <textarea type="text" id="ProblemCause" placeholder="(required)" required ></textarea>
+                    </label>
+
+                    <label for="starRating">
+                        Does this plant have any special properties (smell, poison, legality) known to you? (we'll investigate this ourselves before we stock up): 
+                        <textarea type="text" id="ProblemCause" placeholder="(optional)"></textarea>
+                    </label>
+
+                    <label for="ImageAttachment">
+                        If you would like to attach and image of the plant:
+                        <input type="file" accept="image/png, image/jpg" id="ImageAttachment">
+                    </label>
+
+                    <button type="submit" class="submitBtn">Submit</button>
+
+                </form>
             </div>
 
             <div class="contact_section web_complaint" data-type="web_complaint">
                 <h1 class="title" data-type="web_complaint">Website Complaints</h1>
                 <div class="personalInfo">
-                    <h1>Contacts Form</h1>
+                    <h1>Contacts</h1>
                     <form class="personalInfoForm">
                           <label for="FirstName">
                             Firstname: 
@@ -126,13 +166,68 @@
                             Phone Number: 
                             <input type="text" id="PhoneNumber" placeholder="(optional)">
                           </label>
-
-                          <button type="submit" class="submitBtn">Submit</button>
                     </form>
                 </div>
-                <div class="complaintForm">
-                    <form>
+                <div class="complaintDetails">
+                    <h1>Complaint</h1>
+                    <form class="complaintForm">
+                        <label for="ProblemType">
+                            What page did you encounter your problem?: 
+                            <select id="ProblemType" required>
+                                <option value="none">-select-</option>
+                                <option value="Home">Home</option>
+                                <option value="Contact">Contact</option>
+                                <option value="FAQ">FAQ</option>
+                                <option value="Shop">Shop</option>
+                                <option value="About">About</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </label>
                         
+                        <label for="ProblemType">
+                            What type of problem did you encounter?: 
+                            <select id="ProblemType" required>
+                                <option value="none">-select-</option>
+                                <option value="accessibility">accessibility</option>
+                                <option value="Performance">Performance</option>
+                                <option value="Useability">Useability</option>
+                                <option value="ConfusingLayout">Confusing Layout</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </label>
+
+                        <label for="ProblemType">
+                            Would you like us to message you if we decide to take action for this issue?: 
+                            <select id="ProblemType" required>
+                                <option value="no">No</option>
+                                <option value="yes">Yes</option>
+                            </select>
+                        </label>
+
+                        <label for="ProblemDescription">
+                            Describe your issue with as much detail as possible: 
+                            <textarea type="text" id="ProblemDescription" placeholder="(required)" required ></textarea>
+                        </label>
+
+                        <label for="ProblemCause">
+                            Describe how the problem was caused and how to recreate it: 
+                            <textarea type="text" id="ProblemCause" placeholder="(required)" required ></textarea>
+                        </label>
+
+                        <label for="starRating">
+                            On a scale of 1-5 how would you rank the significance of this issue for most people?: 
+                            <select id="starRating" required>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="2">3</option>
+                                <option value="2">4</option>
+                                <option value="2">5</option>
+                            </select>
+                        </label>
+
+
+
+                        <button type="submit" class="submitBtn">Submit</button>
                     </form>
 
                 </div>

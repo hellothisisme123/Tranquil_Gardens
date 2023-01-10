@@ -17,12 +17,20 @@ const clearSections = (notCleared) => {
             transitional.style.gridTemplateColumns = 'repeat(1, 1fr)'
         }
     });
+
+    setTimeout(() => {
+        left.remove()
+        middle.remove()
+        right.remove()            
+    }, aniTime);
 }
 
 const aniTime = 750
 
 left.addEventListener('click', (e) => {
     console.log(left)
+    // transitional.style.display = 'grid'
+    transitional.removeAttribute('data-preClick')
     transitional.style.transition = `left ${aniTime}ms cubic-bezier(0.075, 0.82, 0.165, 1)`
     transitional.style.left = '0'
 
@@ -30,7 +38,9 @@ left.addEventListener('click', (e) => {
 })
 
 middle.addEventListener('click', (e) => {
-    console.log(left)
+    console.log(middle)
+    // transitional.style.display = 'grid'
+    transitional.removeAttribute('data-preClick')
     transitional.style.backgroundColor = 'var(--color_2)'
     transitional.style.transition = `left ${aniTime}ms cubic-bezier(0.075, 0.82, 0.165, 1)`
     transitional.style.left = '0'
@@ -39,9 +49,13 @@ middle.addEventListener('click', (e) => {
 })
 
 right.addEventListener('click', (e) => {
-    console.log(left)
+    console.log(right)
+    // transitional.style.display = 'grid'
+    transitional.removeAttribute('data-preClick')
     transitional.style.transition = `left ${aniTime}ms cubic-bezier(0.075, 0.82, 0.165, 1)`
     transitional.style.left = '0'
 
     clearSections(storeComplaints)
 })
+
+
