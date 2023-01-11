@@ -102,6 +102,16 @@ html {
     margin: 2%;
 }
 
+
+
+/* .contacts div {
+    width: 0;
+    height: 0;
+    display: inline;
+    flex-shrink: 1;
+    display: none;
+} */
+
 @media screen and (width <= 1100px) {
     .content_item {
         flex-direction: column;
