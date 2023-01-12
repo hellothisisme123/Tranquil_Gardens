@@ -58,7 +58,7 @@ nav > .nav_item:hover > a {
 }
 
 nav > .nav_item:hover > a {
-    color: var(--color_2);
+    color: var(--text_color_2);
 }
 
 nav > .nav_item > a {
@@ -117,11 +117,11 @@ nav > .nav_icon {
     }
 
     nav > .nav_item:nth-child(even) > .nav_icon {
-        filter: invert(99%) sepia(85%) saturate(589%) hue-rotate(294deg) brightness(102%) contrast(83%);
+        filter: var(--black_to_dark_filter);
     }
     
     nav > .nav_item:nth-child(even):hover > .nav_icon {
-        filter: invert(10%) sepia(7%) saturate(5502%) hue-rotate(212deg) brightness(97%) contrast(96%);
+        filter: var(--black_to_light_filter);
     }
 
     nav > .nav_item:nth-child(even):hover > .nav_icon > img {
@@ -129,11 +129,11 @@ nav > .nav_icon {
     }
 
     nav > .nav_item:nth-child(odd) > .nav_icon {
-        filter: invert(10%) sepia(7%) saturate(5502%) hue-rotate(212deg) brightness(97%) contrast(96%);
+        filter: var(--black_to_light_filter);
     }
 
     nav > .nav_item:nth-child(odd):hover > .nav_icon {
-        filter: invert(99%) sepia(85%) saturate(589%) hue-rotate(294deg) brightness(102%) contrast(83%);
+        filter: var(--black_to_dark_filter);
     }
 
     nav > .nav_item:nth-child(odd):hover > .nav_icon > img {
@@ -164,7 +164,7 @@ nav > .nav_icon {
     }
 
     nav > .nav_item:nth-child(odd) > a {
-        color: var(--color_2);
+        color: var(--text_color_2);
     }
 
     nav > .nav_item:hover {
@@ -185,11 +185,11 @@ nav > .nav_icon {
     }
 
     nav > .nav_item:nth-child(odd):hover > a {
-        color: var(--color_1);
+        color: var(--text_color_1);
     }
 
     nav > .nav_item:nth-child(even):hover > a {
-        color: var(--color_2);
+        color: var(--text_color_2);
     }
     
     nav > .nav_logo {
@@ -266,7 +266,7 @@ footer {
 }
 
 footer * {
-    color: #fff;
+    color: var(--text_color_5);
 }
 
 footer a {

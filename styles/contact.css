@@ -19,7 +19,7 @@ html {
 }
 
 .contact_type:nth-child(odd) > * {
-    color: var(--color_2);
+    color: var(--text_color_2);
 }
 
 .contact_type {
@@ -115,7 +115,6 @@ html {
     display: grid;
     grid-template-rows: 3rem 1fr;
     box-sizing: border-box;
-
 }
 
 .web_complaint > .personalInfo::after {
@@ -192,7 +191,7 @@ form > label > input:active, form > label > select:active, form > label > input:
 button[type="submit"] {
     border-radius: 1000px;
     outline: none;
-    border: 2px solid #fff;
+    border: 2px solid var(--text_color_5);
     height: 2.5rem;
     width: 60%;
     align-self: center;
@@ -229,7 +228,7 @@ button[type="submit"]:active, button[type="submit"]:focus, button[type="submit"]
 
 /*  */
 .contact_section.suggestions * {
-    color: var(--color_2);
+    color: var(--text_color_2);
 }
 
 .contact_section.suggestions {

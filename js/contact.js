@@ -29,6 +29,7 @@ const aniTime = 750
 
 left.addEventListener('click', (e) => {
     console.log(left)
+    window.scrollTo(0, 0)
     // transitional.style.display = 'grid'
     // transitional.style.display = 'grid'
     transitional.removeAttribute('data-preClick')
@@ -42,6 +43,7 @@ left.addEventListener('click', (e) => {
 
 middle.addEventListener('click', (e) => {
     console.log(middle)
+    window.scrollTo(0, 0)
     // transitional.style.display = 'grid'
     transitional.removeAttribute('data-preClick')
     transitional.style.backgroundColor = 'var(--color_2)'
@@ -56,6 +58,7 @@ middle.addEventListener('click', (e) => {
 
 right.addEventListener('click', (e) => {
     console.log(right)
+    window.scrollTo(0, 0)
     // transitional.style.display = 'grid'
     transitional.removeAttribute('data-preClick')
 

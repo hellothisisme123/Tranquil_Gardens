@@ -98,7 +98,7 @@ html {
     align-self: right;
     width: 60%;
     height: auto;
-    filter: invert(99%) sepia(74%) saturate(528%) hue-rotate(295deg) brightness(94%) contrast(95%) drop-shadow(0 0 3px rgb(234, 215, 209, 0.5));
+    filter: var(--black_to_light_filter_shadow);
     margin: 2%;
 }
 
@@ -136,7 +136,7 @@ html {
     .content_item:nth-child(even) {
         background-color: var(--color_1);
         border-color: var(--color_2);
-        color: var(--color_2);
+        color: var(--text_color_2);
     }
 
     .bg_image {

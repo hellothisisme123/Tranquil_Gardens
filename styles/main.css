@@ -1,17 +1,50 @@
+:root[data-theme="regular"] {
+    --color_1: #EAD7D1;
+    --color_2: #1F1A38;
+    --color_3: #262045;
+    --text_color_1: #EAD7D1;
+    --text_color_2: #1F1A38;
+    --text_color_3: #262045;
+    --color_4: #ffebe5;
+    --text_color_5: #fff;
+
+    --black_to_light_filter_shadow: invert(99%) sepia(74%) saturate(528%) hue-rotate(295deg) brightness(94%) contrast(95%) drop-shadow(0 0 3px rgb(234, 215, 209, 0.5));
+    --black_to_dark_filter_shadow: ;
+
+    --black_to_dark_filter: invert(99%) sepia(85%) saturate(589%) hue-rotate(294deg) brightness(102%) contrast(83%);
+    --black_to_light_filter: invert(10%) sepia(7%) saturate(5502%) hue-rotate(212deg) brightness(97%) contrast(96%);
+    /* --color_5: #034732; */
+}
+
+:root[data-theme="dark"] {
+
+}
+
+:root[data-theme="light"] {
+    --color_1: #1F1A38;
+    --color_2: #EAD7D1;
+    --color_3: #ffebe5;
+    --text_color_1: #EAD7D1;
+    --text_color_2: #1F1A38;
+    --text_color_3: #262045;
+    --color_4: #262045;
+    --text_color_5: #1F1A38;
+
+    --black_to_light_filter_shadow: invert(99%) sepia(74%) saturate(528%) hue-rotate(295deg) brightness(94%) contrast(95%) drop-shadow(0 0 3px rgb(234, 215, 209, 0.5));
+    --black_to_dark_filter_shadow: ;
+
+    --black_to_light_filter: invert(10%) sepia(7%) saturate(5502%) hue-rotate(212deg) brightness(97%) contrast(96%);
+    --black_to_dark_filter: invert(99%) sepia(85%) saturate(589%) hue-rotate(294deg) brightness(102%) contrast(83%);
+}
+
+
 * {
     margin: 0;
     padding: 0;
     font-family: Calibri;
-    color: #fff;
+    color: var(--text_color_5);
 }
 
-:root {
-    --color_1: #EAD7D1;
-    --color_2: #1F1A38;
-    --color_3: #262045;
-    --color_4: #ffebe5;
-    /* --color_5: #034732; */
-}
 
 html {
     background-color: var(--color_2);
