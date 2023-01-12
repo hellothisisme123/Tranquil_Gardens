@@ -16,6 +16,10 @@ nav {
     z-index: 100;
 }
 
+.cursor-pointer {
+    cursor: pointer;
+}
+
 nav > .nav_logo {
     height: 90%;
     aspect-ratio: 1;
@@ -117,11 +121,11 @@ nav > .nav_icon {
     }
 
     nav > .nav_item:nth-child(even) > .nav_icon {
-        filter: var(--black_to_dark_filter);
+        filter: var(--black_to_light_filter);
     }
     
     nav > .nav_item:nth-child(even):hover > .nav_icon {
-        filter: var(--black_to_light_filter);
+        filter: var(--black_to_dark_filter);
     }
 
     nav > .nav_item:nth-child(even):hover > .nav_icon > img {
@@ -129,11 +133,11 @@ nav > .nav_icon {
     }
 
     nav > .nav_item:nth-child(odd) > .nav_icon {
-        filter: var(--black_to_light_filter);
+        filter: var(--black_to_dark_filter);
     }
 
     nav > .nav_item:nth-child(odd):hover > .nav_icon {
-        filter: var(--black_to_dark_filter);
+        filter: var(--black_to_light_filter);
     }
 
     nav > .nav_item:nth-child(odd):hover > .nav_icon > img {
@@ -167,6 +171,10 @@ nav > .nav_icon {
         color: var(--text_color_2);
     }
 
+    nav > .nav_item:nth-child(even) > a {
+        color: var(--text_color_4);
+    }
+
     nav > .nav_item:hover {
         transform: scaleY(1.2);
     }
@@ -185,7 +193,7 @@ nav > .nav_icon {
     }
 
     nav > .nav_item:nth-child(odd):hover > a {
-        color: var(--text_color_1);
+        color: var(--text_color_5);
     }
 
     nav > .nav_item:nth-child(even):hover > a {
@@ -255,6 +263,7 @@ footer {
     width: 100%;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
     background-color: var(--color_2);
     border-top: 2px solid var(--color_1);
@@ -284,4 +293,24 @@ footer a:hover {
 
 footer a {
     text-decoration: none;
+}
+
+@media screen and (width <= 900px) {
+    footer a {
+        --col_count: 2;
+    }
+
+    footer {
+        gap: 1.5rem var(--col-gap);
+    }
+}
+
+@media screen and (width <= 500px) {
+    footer a {
+        --col_count: 1;
+    }
+
+    footer {
+        gap: 1.5rem var(--col-gap);
+    }
 }

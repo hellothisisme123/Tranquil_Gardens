@@ -29,4 +29,72 @@ const checkWindowSize = (e) => {
 
 checkWindowSize()
 
+// let cookiesAllowed = true
+
+const setCookies = () => {
+    let cookies = document.cookie
+    cookies = cookies.split(';')
+    // console.log(cookies);
+
+
+
+    cookies.forEach(cookie => {
+        cookie = cookie.trim()
+        // console.log(cookie);
+        cookie = cookie.split('=')
+        
+        window[cookie[0]] = cookie[1]
+    });
+    
+    
+    
+    console.log(cookies, window)
+}
+
+const allowCookies = (setValue) => {
+    const date = new Date()
+    date.setTime(date.getTime() + 2592000000) // taken from https://www.w3schools.com/js/js_cookies.asp
+    document.cookie = `cookiesAllowed=${setValue};${`expires=${date.toUTCString()}`};path=/;SameSite=None;Secure`
+
+    // window.cookiesAllowed
+    setCookies()
+    console.log(window)
+}
+
+const setColorTheme = () => {
+    document.documentElement.dataset.theme = window.colorThemeCookie
+}
+
+
+
+const colorTheme = (theme) => {
+    if (window.cookiesAllowed == 'false') {
+        console.log(window.cookiesAllowed);
+        document.documentElement.dataset.theme = theme
+    } else if (window.cookiesAllowed) {   
+
+        // document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/"
+        const date = new Date()
+        date.setTime(date.getTime() + 2592000000) // taken from https://www.w3schools.com/js/js_cookies.asp
+        
+        document.cookie = `colorThemeCookie=${theme};${`expires=${date.toUTCString()}`};path=/;SameSite=None;Secure`
+        // console.log(document.cookie);
+        
+        setCookies()
+        setColorTheme()
+    }
+}
+
+
+
+
+
+
+setCookies()
+setColorTheme()
+
+
+
+
+
 window.addEventListener('resize', (e) => { checkWindowSize(1) })

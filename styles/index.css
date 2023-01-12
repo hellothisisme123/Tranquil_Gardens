@@ -136,7 +136,23 @@ html {
     .content_item:nth-child(even) {
         background-color: var(--color_1);
         border-color: var(--color_2);
+    }
+    
+    .content_item:nth-child(even) * {
         color: var(--text_color_2);
+    }
+        
+
+    .content_item:nth-child(odd) * {
+        color: var(--text_color_5);
+    }
+
+    .content_item:nth-child(odd) img {
+        filter: var(--black_to_light_filter_shadow);
+    }
+
+    .content_item:nth-child(even) img {
+        filter: var(--black_to_dark_filter_shadow);
     }
 
     .bg_image {

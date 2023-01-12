@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="./styles/index.css">
     
     <script src="https://kit.fontawesome.com/5b301baa54.js" crossorigin="anonymous"></script>
-    <script src="./js/nav.js" type="module" defer></script>
+    <script src="./js/nav.js" defer></script>
     
     <link rel="shortcut icon" href="./production/svg/YinYangLogo.svg" type="image/x-icon">
     <title>Document</title>
@@ -68,7 +68,13 @@
                 <img src="./production/svg/shopping_basket.svg" alt="">
             </div>
         </div>
-        </nav>
+    </nav>
+
+    <div class="cookies_container">
+        <p>Would you like to accept cookies, they expire after 30 days, and they are used to keep the color theme (dark/regular/light) between page reloads</p>
+        <button class="accept" onclick="allowCookies(true)">Accept Cookies</button>
+        <button class="decline" onclick="allowCookies(false)">Decline Cookies</button>
+    </div>
 
     <div class="container">
         <div class="bg_image">
@@ -165,21 +171,21 @@
                 </div>
             </a>
             
-            <a onclick="colorTheme('dark')">
+            <a class="cursor-pointer" onclick="colorTheme('dark')">
                 <div>
                     Dark Mode
                     <i class="fa-solid fa-moon"></i>
                 </div>
             </a>
             
-            <a onclick="colorTheme('light')">
+            <a class="cursor-pointer" onclick="colorTheme('light')">
                 <div>
                     Light Mode
                     <i class="fa-regular fa-sun"></i>
                 </div>
             </a>
             
-            <a onclick="colorTheme('regular')">
+            <a class="cursor-pointer" onclick="colorTheme('regular')">
                 <div>
                     Regular Mode
                     <i class="fa-solid fa-cloud-sun"></i>
