@@ -58,7 +58,7 @@ const allowCookies = (setValue) => {
 }
 
 const setColorTheme = () => {
-    if (window.cookiesAllowed == 'false') {
+    if (window.cookiesAllowed != 'true') {
         document.documentElement.dataset.theme = 'regular'
     }
 
@@ -68,7 +68,7 @@ const setColorTheme = () => {
 
 
 const colorTheme = (theme) => {
-    if (window.cookiesAllowed == 'false') {
+    if (window.cookiesAllowed != 'true') {
         console.log(window.cookiesAllowed);
         document.documentElement.dataset.theme = theme
     } else if (window.cookiesAllowed) {   
