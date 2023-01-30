@@ -58,17 +58,17 @@ const allowCookies = (setValue) => {
 }
 
 const setColorTheme = () => {
-    if (window.cookiesAllowed != 'true') {
+    if (window.cookiesAllowed == undefined) {
         document.documentElement.dataset.theme = 'regular'
+        return
     }
-
     document.documentElement.dataset.theme = window.colorThemeCookie
 }
 
 
 
 const colorTheme = (theme) => {
-    if (window.cookiesAllowed != 'true') {
+    if (window.cookiesAllowed == undefined) {
         console.log(window.cookiesAllowed);
         document.documentElement.dataset.theme = theme
     } else if (window.cookiesAllowed) {   
