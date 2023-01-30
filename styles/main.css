@@ -79,7 +79,7 @@ html {
     width: 75%;
     display: flex;
     background-color: var(--color_1);
-    z-index: 100;
+    z-index: 90;
     translate: -50% 0;
     align-items: center;
     justify-content: center;
@@ -115,4 +115,3 @@ html {
 .cookies_container button.accept:active {
     filter: saturate(3);
 }
-

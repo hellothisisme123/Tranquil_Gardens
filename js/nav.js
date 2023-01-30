@@ -34,19 +34,15 @@ checkWindowSize()
 const setCookies = () => {
     let cookies = document.cookie
     cookies = cookies.split(';')
-    // console.log(cookies);
-
-
+    console.log(cookies);
 
     cookies.forEach(cookie => {
         cookie = cookie.trim()
-        // console.log(cookie);
         cookie = cookie.split('=')
+        // console.log(cookie[0]);
         
         window[cookie[0]] = cookie[1]
     });
-    
-    
     
     console.log(cookies, window)
 }
@@ -62,6 +58,10 @@ const allowCookies = (setValue) => {
 }
 
 const setColorTheme = () => {
+    if (window.cookiesAllowed == 'false') {
+        document.documentElement.dataset.theme = 'regular'
+    }
+
     document.documentElement.dataset.theme = window.colorThemeCookie
 }
 
@@ -72,7 +72,7 @@ const colorTheme = (theme) => {
         console.log(window.cookiesAllowed);
         document.documentElement.dataset.theme = theme
     } else if (window.cookiesAllowed) {   
-
+        
         // document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/"
         const date = new Date()
         date.setTime(date.getTime() + 2592000000) // taken from https://www.w3schools.com/js/js_cookies.asp
@@ -84,11 +84,6 @@ const colorTheme = (theme) => {
         setColorTheme()
     }
 }
-
-
-
-
-
 
 setCookies()
 setColorTheme()

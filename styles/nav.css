@@ -272,6 +272,7 @@ footer {
     padding: 1% 5%;
     box-sizing: border-box;
     grid-column: span 100;
+    z-index: 100;
 }
 
 footer * {
