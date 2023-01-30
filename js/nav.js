@@ -51,9 +51,12 @@ const allowCookies = (setValue) => {
     const date = new Date()
     date.setTime(date.getTime() + 2592000000) // taken from https://www.w3schools.com/js/js_cookies.asp
     document.cookie = `cookiesAllowed=${setValue};${`expires=${date.toUTCString()}`};path=/;SameSite=None;Secure`
+    document.cookie = `colorThemeCookie=regular;${`expires=${date.toUTCString()}`};path=/;SameSite=None;Secure`
+
 
     // window.cookiesAllowed
     setCookies()
+    setColorTheme()
     console.log(window)
 }
 
@@ -62,6 +65,11 @@ const setColorTheme = () => {
         document.documentElement.dataset.theme = 'regular'
         return
     }
+
+    if (window.cookiesAllowed == 'true' && document.querySelector('.cookies_container')) {
+        document.querySelector('.cookies_container').remove()
+    }
+
     document.documentElement.dataset.theme = window.colorThemeCookie
 }
 
@@ -72,6 +80,7 @@ const colorTheme = (theme) => {
         console.log(window.cookiesAllowed);
         document.documentElement.dataset.theme = theme
     } else if (window.cookiesAllowed) {   
+        
         
         // document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/"
         const date = new Date()
