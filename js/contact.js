@@ -39,6 +39,9 @@ left.addEventListener('click', (e) => {
     
         clearSections(suggestions)
     }, 0);
+
+    document.querySelector('footer').style.marginTop = '100vh'
+    document.querySelector('footer').style.marginBottom = '-10%'
 })
 
 middle.addEventListener('click', (e) => {
@@ -54,6 +57,9 @@ middle.addEventListener('click', (e) => {
 
         clearSections(webComplaints)
     }, 0);
+
+    document.querySelector('footer').style.marginTop = '100vh'
+    document.querySelector('footer').style.marginBottom = '-10%'
 })
 
 right.addEventListener('click', (e) => {
@@ -68,6 +74,9 @@ right.addEventListener('click', (e) => {
 
         clearSections(storeComplaints)
     }, 0);
+
+    document.querySelector('footer').style.marginTop = '100vh'
+    document.querySelector('footer').style.marginBottom = '-10%'
 })
 
 

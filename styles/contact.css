@@ -282,3 +282,5 @@ button[type="submit"]:active, button[type="submit"]:focus, button[type="submit"]
 .contact_section.suggestions textarea:focus, .contact_section.suggestions input:focus, .contact_section.suggestions select:focus, .contact_section.suggestions button:focus, .contact_section.suggestions textarea:active, .contact_section.suggestions input:active, .contact_section.suggestions select:active, .contact_section.suggestions button:active {
     background-color: var(--color_1);
 }
+
+footer {}

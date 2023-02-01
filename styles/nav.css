@@ -14,6 +14,7 @@ nav {
     top: 0;
     left: 0;
     z-index: 100;
+    transition: left cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
 }
 
 .cursor-pointer {
@@ -147,7 +148,6 @@ nav > .nav_icon {
     nav > .nav_item > .nav_icon > img {
         width: 100%;
         max-height: 80%;
-        /* transform: scaleY(calc(1 / 1.2)); */
     }
 
     nav > .home_nav_item {
@@ -203,44 +203,24 @@ nav > .nav_icon {
     nav > .nav_logo {
         cursor: pointer;
         position: fixed;
-        
+        width: 20%;
+        height: 15%;
         translate: -50% -50%;
+        display: block;
+        left: 87.5%;
+        top: 9%;
+        /* height: 10vh; */
     }
     
     nav > .nav_logo > img {
         width: 100%;
         height: 100%;
     }
-    
+
     
    
-    
-    
     nav.innactive {
-        background-color: transparent;
-        box-shadow: none;
-        user-select: none;
-        pointer-events: none;
-    }
-    
-    nav.innactive::after {
-        opacity: 0;
-    }
-    
-    nav.innactive > * {
-        display: none;
-    }
-    
-    nav > .nav_logo {
-        display: block;
-        left: 90%;
-        top: 7.5%;
-        height: 10%;
-    }
-
-    nav.innactive > .nav_logo {
-        pointer-events: all;
-        user-select: all;
+        left: -100%;
     }
 
     div.container {
@@ -259,7 +239,6 @@ nav > .nav_icon {
 }
 
 footer {
-    /* margin-top: 5vh; */
     width: 100%;
     display: flex;
     justify-content: space-around;

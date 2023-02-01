@@ -1,40 +1,36 @@
 const ying_yang_logo = document.querySelector('.nav_logo')
-window.addEventListener('click', (e) => {
-    if (ying_yang_logo.classList.contains('activeListener')) {
-        const nav = document.querySelector('nav')
-        const ying_yang_img = ying_yang_logo.childNodes[1]
 
-        if (e.target != nav && e.target.parentElement != nav) { // prevents when clicked inside nav
-            nav.classList.add('innactive')
-        }
-        if (e.target == ying_yang_img) { // only when clicked on the logo
-            nav.classList.remove('innactive')
-        } 
-    }
-})
-
-const checkWindowSize = (e) => {
+const widthCheck = () => {
     let window_width = document.documentElement.clientWidth
-    
-    if (window_width <= 600) { // sets wether the logo button works
-        document.body.click()
-        ying_yang_logo.classList.add('activeListener')
-        ying_yang_logo.removeAttribute('href')
+    if (window_width <= 600) {
+        ying_yang_logo.href = '#'
     } else {
-        ying_yang_logo.classList.remove('activeListener')
-        ying_yang_logo.setAttribute('href', './index.html')
-
+        ying_yang_logo.href = './index.html'
     }
 }
+window.addEventListener('resize', (e) => widthCheck())
+widthCheck()
 
-checkWindowSize()
+window.addEventListener('click', (e) => {
+    let window_width = document.documentElement.clientWidth
+    if (window_width >= 600) return
 
-// let cookiesAllowed = true
+
+    const nav = document.querySelector('nav')
+    if (e.target == ying_yang_logo.children[0]) {
+        e.preventDefault()
+        nav.classList.toggle('innactive')
+    }
+    
+    if (nav.classList.length < 1 && e.target != nav && e.target.parentElement != nav && e.target.parentElement.parentElement != nav && e.target.parentElement.parentElement.parentElement != nav) {
+        nav.classList.toggle('innactive')
+    }
+})
 
 const setCookies = () => {
     let cookies = document.cookie
     cookies = cookies.split(';')
-    console.log(cookies);
+    // console.log(cookies);
 
     cookies.forEach(cookie => {
         cookie = cookie.trim()
@@ -101,4 +97,4 @@ setColorTheme()
 
 
 
-window.addEventListener('resize', (e) => { checkWindowSize(1) })
+// window.addEventListener('resize', (e) => { checkWindowSize(1) })
