@@ -1,0 +1,140 @@
+.container {
+    margin-top: 10vh;
+}
+
+.backBtn {
+    position: fixed;
+    font-size: 3rem;
+    z-index: 20;
+    left: 1rem;
+    z-index: 110;
+    top: 8vh;
+    cursor: pointer;
+}
+
+.backBtn i {
+    color: var(--color_1);
+}
+
+.backBtn:hover i {
+    color: var(--color_4);
+}
+
+.item {
+    position: relative;
+    width: 100%;
+    max-width: 1280px;
+    overflow: hidden;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
+
+.imgWrapper {
+    display: flex;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    padding: 2rem;
+}
+
+.imgWrapper > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    justify-content: flex-start;
+    padding: 2rem;
+}
+
+.information > .starRatingWrapper {
+    display: flex;
+    height: 5vh;
+    gap: 0.5rem;
+}
+
+.information > .starRatingWrapper > i {
+    height: 100%;
+    display: flex;
+    font-size: 1.5rem;
+    place-items: center;
+}
+
+.information > .starRatingWrapper > i:hover {
+    color: var(--color_1);
+}
+
+.information > .starRatingWrapper h3 {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.information > .description {
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+}
+
+.information > .moneyWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.information > .moneyWrapper > button {
+    display: flex;
+    flex-basis: 30%;
+    padding: 0.25rem 0;
+    background-color: var(--color_3);
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    border: 3px solid var(--color_1);
+    cursor: pointer;
+}
+
+.information > .moneyWrapper > button:hover {
+    background-color: var(--color_2);
+    border: 3px solid var(--color_4);
+}
+
+.information > .cost {
+    font-size: 1.25rem;
+    opacity: 0.75;
+}
+
+@media screen and (width <= 800px) {
+    .item {
+        grid-template-columns: 1fr;
+    }
+
+    .imgWrapper {
+        height: 80vh;
+    }
+
+    .information > .description {
+        max-height: 80vh;
+        overflow: scroll;
+        padding: 0;
+        margin: 1rem;
+    }
+
+    .information > .moneyWrapper > button {
+        flex-basis: 100%;
+    }
+
+    .backBtn {
+        left: auto;
+        right: 1rem;
+        top: 15vh;
+    }
+}

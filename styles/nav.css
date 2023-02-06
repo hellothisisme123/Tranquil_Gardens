@@ -229,9 +229,17 @@ nav > .nav_icon {
 }
 
 
+:root[data-theme="regular"] .colorTheme.regular {
+    background-color: var(--color_3);
+}
 
+:root[data-theme="dark"] .colorTheme.dark {
+    background-color: var(--color_3);
+}
 
-
+:root[data-theme="light"] .colorTheme.light {
+    background-color: var(--color_4);
+}
 
 /* Footer */
 :root {
@@ -264,11 +272,11 @@ footer a {
     flex-shrink: 1;
     text-align: center;
     padding: 0.4% 0;
+    border-radius: 1000px;
 }
 
 footer a:hover {
     background-color: var(--color_3);
-    border-radius: 1000px;
 }
 
 footer a {
