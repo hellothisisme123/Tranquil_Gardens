@@ -1,3 +1,7 @@
+body, html {
+    overflow-x: hidden;
+}
+
 .container {
     box-sizing: border-box;
     padding: 2rem;
@@ -86,7 +90,7 @@
     justify-content: space-evenly;
 }
 
-.item > .btnWrapper > a {
+.item > .btnWrapper > a, .item > .btnWrapper > button {
     border-radius: 1000px;
     background-color: var(--color_2);
     padding: 1%;
@@ -99,13 +103,23 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
-.item > .btnWrapper > a:hover {
+.item > .btnWrapper > a:hover, .item > .btnWrapper > button:hover {
     background-color: var(--color_3);
     border: 3px solid var(--color_4);
 }
 
 .shopFront > .btnWrapper {
     flex-basis: 100%;
+}
+
+.leafIcon {
+    position: absolute;
+    width: 5vw;
+    z-index: 99;
+    user-select: none;
+    pointer-events: none;
+    filter: var(--black_to_light_filter_shadow);
 }

@@ -112,6 +112,10 @@
     opacity: 0.75;
 }
 
+.information > .stock {
+    margin: 0 0 0.35rem;
+}
+
 @media screen and (width <= 800px) {
     .item {
         grid-template-columns: 1fr;

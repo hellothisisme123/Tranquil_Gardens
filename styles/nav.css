@@ -78,6 +78,10 @@ nav > .nav_icon {
     display: none;
 }
 
+:root[data-theme="regular"] nav > .nav_item:hover i {
+    filter: var(--black_to_light_filter);
+}
+
 @media screen and (width <= 1000px) {
     nav > .nav_item {
         font-size: 1.5rem;
