@@ -11,6 +11,46 @@ expandBtns.forEach(btn => {
 
 let shoppingCart = []
 
+// broken
+const getCookies = () => {
+    let red = document.cookie
+    console.log(red)
+    red = red.split(';')
+    red.forEach(cookie => {
+        red = red.split('=')[1]
+        red = JSON.parse(red)
+        console.log(red)
+    });
+}
+
+// works
+const setJSONCookie = (cookie, title, expireDate) => {
+    if (expireDate == undefined) expireDate = 30
+
+    const date = new Date()
+    date.setTime(date.getTime() + expireDate * 24 * 60 * 60)
+    document.cookie = `${title}=${JSON.stringify(cookie)};expired=${date.toUTCString()};path=/;SameSite=None;Secure`
+
+    // return getCookies()
+}
+
+// works
+const setValueCookie = (cookie, title, expireDate) => {
+    if (expireDate == undefined) expireDate = 30
+
+    const date = new Date()
+    date.setTime(date.getTime() + expireDate * 24 * 60 * 60)
+    document.cookie = `${title}=${cookie};expired=${date.toUTCString()};path=/;SameSite=None;Secure`
+}
+
+// broken
+const setCookiesToWindow = () => {
+    console.log(document.cookie);
+    let red = document.cookie.split(';')
+    console.log(red)
+    // document.cookie.split(';')
+}
+
 items.forEach(item => {
     item = {
         'select': item,
@@ -37,8 +77,6 @@ items.forEach(item => {
             'addToCartBtn': e.target.parentElement.parentElement.querySelector('.btnWrapper').querySelector('.addToCart')
         }
         item.cartBtnBoundBox = item.addToCartBtn.getBoundingClientRect()
-
-
 
         // creates a leaf element
         let leaf = document.createElement('img')
@@ -68,19 +106,25 @@ items.forEach(item => {
                 
             }
         )
-
         
         // adds item to cart cookie
+        delete item['cartBtnBoundBox']
+        delete item['addToCartBtn']
+        delete item['orderNowBtn']
+        delete item['select']
         shoppingCart.push(item)
         console.log(shoppingCart);
 
         const date = new Date()
         date.setTime(date.getTime() + 2592000000)
         document.cookie = `shoppingCart=${JSON.stringify(shoppingCart)};expired=${date.toUTCString()};path=/;SameSite=None;Secure`
+
+        
+
         
         
 
-        console.log(tmpCookies);
+        // console.log(tmpCookies);
         
 
 

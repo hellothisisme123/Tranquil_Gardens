@@ -123,3 +123,13 @@ body, html {
     pointer-events: none;
     filter: var(--black_to_light_filter_shadow);
 }
+
+@media screen and (width <= 750px) {
+    .item {
+        flex-basis: 80%;
+        
+    }
+    .item > .description {
+        max-height: 40vh;
+    }
+}
