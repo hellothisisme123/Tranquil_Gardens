@@ -9,47 +9,25 @@ expandBtns.forEach(btn => {
     })
 })
 
+// sets the shopping cart according to cookies
 let shoppingCart = []
+let cookies = document.cookie
+cookies = cookies.split(';')
+cookies.forEach((cookie, i) => {
+    cookies[i] = cookies[i].trim()
+    cookies[i] = cookies[i].split('=')
 
-// broken
-const getCookies = () => {
-    let red = document.cookie
-    console.log(red)
-    red = red.split(';')
-    red.forEach(cookie => {
-        red = red.split('=')[1]
-        red = JSON.parse(red)
-        console.log(red)
-    });
-}
+    if (cookies[i][0] == 'shoppingCart') {
+        cookies[i][1] = JSON.parse(cookies[i][1])
+        cookies[i][1] = cookies[i][1]
 
-// works
-const setJSONCookie = (cookie, title, expireDate) => {
-    if (expireDate == undefined) expireDate = 30
+        shoppingCart = cookies[i][1]
+    }
+})
 
-    const date = new Date()
-    date.setTime(date.getTime() + expireDate * 24 * 60 * 60)
-    document.cookie = `${title}=${JSON.stringify(cookie)};expired=${date.toUTCString()};path=/;SameSite=None;Secure`
+console.log(shoppingCart)
 
-    // return getCookies()
-}
 
-// works
-const setValueCookie = (cookie, title, expireDate) => {
-    if (expireDate == undefined) expireDate = 30
-
-    const date = new Date()
-    date.setTime(date.getTime() + expireDate * 24 * 60 * 60)
-    document.cookie = `${title}=${cookie};expired=${date.toUTCString()};path=/;SameSite=None;Secure`
-}
-
-// broken
-const setCookiesToWindow = () => {
-    console.log(document.cookie);
-    let red = document.cookie.split(';')
-    console.log(red)
-    // document.cookie.split(';')
-}
 
 items.forEach(item => {
     item = {
@@ -118,8 +96,6 @@ items.forEach(item => {
         const date = new Date()
         date.setTime(date.getTime() + 2592000000)
         document.cookie = `shoppingCart=${JSON.stringify(shoppingCart)};expired=${date.toUTCString()};path=/;SameSite=None;Secure`
-
-        
 
         
         

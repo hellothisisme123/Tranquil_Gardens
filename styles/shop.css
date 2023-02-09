@@ -132,4 +132,22 @@ body, html {
     .item > .description {
         max-height: 40vh;
     }
+
+    .item > .expand-Btn {
+        width: 15%;
+    }
+}
+
+@media screen and (width <= 600px) {
+    .container {
+        margin-top: 0;
+    }
+
+    .shopFront {
+        gap: 3rem;
+    }
+
+    .item > .expand-Btn {
+        width: 20%;
+    }
 }
