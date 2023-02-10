@@ -1,6 +1,8 @@
+// sets the data in the url as a variable
 let itemData = Object.fromEntries(new URLSearchParams(location.search))
 console.log(itemData);
 
+// selectors for html elements
 const title = document.querySelector('.title'),
       cost = document.querySelector('.cost'),
       starRatingWrapper = document.querySelector('.starRatingWrapper'),
@@ -9,17 +11,20 @@ const title = document.querySelector('.title'),
       img = document.querySelector('.imgWrapper > img')
       stock = document.querySelector('.stock')
 
+// used to format numbers to money
 const formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'USD'
 })
 
+// sets the data inside the html
 title.innerHTML = itemData.name
 description.innerHTML = itemData.description
 cost.innerHTML = formatter.format(itemData.price)
 ratingCount.innerHTML = `${Math.floor(Math.random()*258)} Ratings`
 stock.innerHTML = `Only ${itemData.stock} Left`
 
+// sets the image src and alt
 img.src = `./production/images/shop/${itemData.imgName}`
 img.alt = itemData.name
 
