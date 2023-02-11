@@ -21,7 +21,7 @@ const formatter = new Intl.NumberFormat('en-US', {
 title.innerHTML = itemData.name
 description.innerHTML = itemData.description
 cost.innerHTML = formatter.format(itemData.price)
-ratingCount.innerHTML = `${Math.floor(Math.random()*258)} Ratings`
+ratingCount.innerHTML = `${itemData.ratingCount} Ratings`
 stock.innerHTML = `Only ${itemData.stock} Left`
 
 // sets the image src and alt
@@ -29,7 +29,7 @@ img.src = `./production/images/shop/${itemData.imgName}`
 img.alt = itemData.name
 
 // fills in the stars accordingly to the starCount
-const starCount = Math.floor(Math.random() * 5 + 1)
+const starCount = itemData.starRating
 Array.from(starRatingWrapper.children).forEach((star, i) => {
     if (star.tagName != 'I') return
     

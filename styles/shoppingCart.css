@@ -24,6 +24,10 @@
     position: relative;
 }
 
+.item.display-none {
+    display: none;
+}
+
 .item::after {
     content: '';
     display: block;

@@ -29,6 +29,7 @@ console.log(shoppingCart)
 
 
 
+
 items.forEach(item => {
     item = {
         'select': item,
@@ -39,10 +40,12 @@ items.forEach(item => {
         'imgName': item.dataset.imgName,
         'description': item.querySelector('.description').innerText,
         'orderNowBtn':item.querySelector('.btnWrapper').querySelector('.orderNow'),
-        'addToCartBtn': item.querySelector('.btnWrapper').querySelector('.addToCart')
+        'addToCartBtn': item.querySelector('.btnWrapper').querySelector('.addToCart'),
+        'ratingCount': item.dataset.ratingCount,
+        'starRating': item.dataset.starRating
     }
 
-    item.orderNowBtn.href = `./purchaseSingleItem.html?name=${item.name}&price=${item.price}&type=${item.type}&stock=${item.stock}&imgName=${item.imgName}&description=${item.description}`
+    item.orderNowBtn.href = `./purchaseSingleItem.html?name=${item.name}&price=${item.price}&type=${item.type}&stock=${item.stock}&imgName=${item.imgName}&description=${item.description}&ratingCount=${item.ratingCount}&starRating=${item.starRating}`
 
     item.addToCartBtn.addEventListener('click', e => {
         const item = {
@@ -52,7 +55,9 @@ items.forEach(item => {
             'type': e.target.parentElement.parentElement.dataset.type,
             'stock': e.target.parentElement.parentElement.dataset.stock,
             'imgName': e.target.parentElement.parentElement.dataset.imgName,
-            'addToCartBtn': e.target.parentElement.parentElement.querySelector('.btnWrapper').querySelector('.addToCart')
+            'addToCartBtn': e.target.parentElement.parentElement.querySelector('.btnWrapper').querySelector('.addToCart'),
+            'starRating': e.target.parentElement.parentElement.dataset.starRating,
+            'ratingCount': e.target.parentElement.parentElement.dataset.ratingCount
         }
         item.cartBtnBoundBox = item.addToCartBtn.getBoundingClientRect()
 
