@@ -153,3 +153,35 @@
 .item > .dataWrapper > .removeItem:hover{
     background-color: var(--color_2);
 }
+
+@media screen and (width <= 600px) {
+    .item {
+        flex-direction: column;
+
+    }
+    
+    .item > .imgWrapper {
+        width: 70%;
+        align-self: center;
+    }
+
+    .item > .dataWrapper > button.removeItem {
+        align-self: center;
+        width: 70%;
+        padding: 1rem 0;
+    }
+
+    .item > .dataWrapper > .amountWrapper {
+        width: 100%;
+    }
+    
+    .item > .dataWrapper > .amountWrapper > input {
+        flex-basis: 50%;
+        font-size: 1.25rem;
+    }
+
+    .item > .dataWrapper > .amountWrapper > button {
+        flex-grow: 1;
+        font-size: 2rem;
+    }
+}
