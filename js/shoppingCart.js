@@ -16,13 +16,35 @@ cookies.forEach((cookie, i) => {
 })
 console.log(shoppingCart)
 
-const emptynessTitle = document.querySelector('.emptynessTitle') 
+const emptynessTitle = document.querySelector('.emptynessTitle'),
+      purchaseAll = document.querySelector('.purchaseAll')
 
 // removes "Wow, so empty..." if the cart is full
-if (shoppingCart.length > 0) emptynessTitle.style.display = 'none'
+if (shoppingCart.length > 0) {
+    emptynessTitle.style.display = 'none'
+} else {
+    purchaseAll.style.display = 'none'
+}
 
 // creates the items from cookies
 const cart = document.querySelector('.cart')
+
+// sets the cost to purchase every item
+const setPurchaseAllCost = () => {
+    const purchaseAllTotalCost = document.querySelector('.purchaseAll .totalCost')
+    let purchaseCost = 0
+    let formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD'
+    })
+    
+    shoppingCart.forEach(item => {
+        purchaseCost += item.amount * item.price
+    })
+    
+    purchaseAllTotalCost.innerHTML = formatter.format(purchaseCost)    
+}
+setPurchaseAllCost()
 
 shoppingCart.forEach(item => {
     console.log(item);
@@ -62,14 +84,37 @@ shoppingCart.forEach(item => {
 
     // remove item button
     removeItemBtn.addEventListener('click', e => {
+        // finds the item to be removed
+        const removedItem = shoppingCart.indexOf(shoppingCart.find(x => x.name==`${e.target.parentElement.parentElement.querySelector('.title a').innerHTML}`))
+
+        delete shoppingCart[removedItem]
+        shoppingCart = shoppingCart.flat()
+        
+        // finalizes to cookies
+        date = new Date()
+        date.setTime(date.getTime() + 2592000000)
+        document.cookie = `shoppingCart=${JSON.stringify(shoppingCart)};expired=${date.toUTCString()};path=/;SameSite=None;Secure`
+
         itemClone.remove()
+        setPurchaseAllCost()
+
+        // readds "Wow, so empty..." if cart is empty
+        if (shoppingCart.length < 1) {
+            console.log(shoppingCart)
+            emptynessTitle.style.display = 'flex'
+            purchaseAll.style.display = 'none'
+        }
+
     })
     
     // amount input
     const amountInput = itemClone.querySelector('input'),
-          amountBtns = amountWrapper.querySelectorAll('button'),
-          downBtn = itemClone.querySelector('.amountWrapper > .down'),
-          upBtn = itemClone.querySelector('.amountWrapper > .up')
+        amountBtns = amountWrapper.querySelectorAll('button'),
+        downBtn = itemClone.querySelector('.amountWrapper > .down'),
+        upBtn = itemClone.querySelector('.amountWrapper > .up')
+
+    // sets the default amount of items to the amount defined in the cookies
+    amountInput.value = item.amount
 
     amountInput.addEventListener('change', e => {
         amountInput.value = parseInt(amountInput.value)
@@ -98,6 +143,16 @@ shoppingCart.forEach(item => {
                     capLabel.remove()
                 }, 1000);
             }
+
+            // finalizes the items amount to the cookies
+            item.amount = amountInput.value
+            const date = new Date()
+            date.setTime(date.getTime() + 2592000000)
+            document.cookie = `shoppingCart=${JSON.stringify(shoppingCart)};expired=${date.toUTCString()};path=/;SameSite=None;Secure`
+
+            // sets the purchase all cost
+            setPurchaseAllCost()
         })
     })
 })
+

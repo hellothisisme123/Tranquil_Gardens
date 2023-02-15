@@ -15,7 +15,23 @@
     flex-direction: column;
     --cart-gap: 3rem;
     gap: var(--cart-gap);
-    min-height: 90vh;
+    min-height: 75vh;
+}
+
+.emptynessTitle {
+    font-size: 2rem;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+}
+
+.emptynessTitle a {
+    color: var(--color_1);
+    text-decoration: none;
+}
+
+.emptynessTitle a:hover {
+    text-decoration: underline;
 }
 
 .item {
@@ -158,10 +174,53 @@
     background-color: var(--color_2);
 }
 
+.purchaseAll {
+    /* position: fixed; */
+    /* bottom: 3%; */
+    margin: 1rem 0;
+    background-color: var(--color_3);
+    padding: 0.5rem 1rem;
+    box-sizing: border-box;
+    width: 85%;
+    border-radius: 10px;
+    border: 3px solid var(--color_1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.purchaseAll .buy {
+    display: flex;
+    gap: 1rem;
+}
+
+.purchaseAll .totalCost {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.purchaseAll button {
+    background-color: var(--color_2);
+    font-size: 2rem;
+    padding: 0 1rem;
+    border-radius: 5px;
+    border: 3px solid var(--color_1);
+    cursor: pointer;
+}
+
+.purchaseAll button:hover {
+    background-color: var(--color_3);
+}
+
+@media screen and (width <= 750px) {
+    .purchaseAll .buy {
+        flex-direction: column;
+    }    
+}
+
 @media screen and (width <= 600px) {
     .item {
         flex-direction: column;
-
     }
     
     .item > .imgWrapper {

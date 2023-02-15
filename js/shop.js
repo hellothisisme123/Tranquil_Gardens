@@ -25,7 +25,7 @@ cookies.forEach((cookie, i) => {
     }
 })
 
-console.log(shoppingCart)
+console.log({'initialCart': shoppingCart})
 
 
 
@@ -38,14 +38,15 @@ items.forEach(item => {
         'type': item.dataset.type,
         'stock': item.dataset.stock,
         'imgName': item.dataset.imgName,
-        'description': item.querySelector('.description').innerText,
+        'description': item.querySelector('.description').innerHTML,
         'orderNowBtn':item.querySelector('.btnWrapper').querySelector('.orderNow'),
         'addToCartBtn': item.querySelector('.btnWrapper').querySelector('.addToCart'),
         'ratingCount': item.dataset.ratingCount,
-        'starRating': item.dataset.starRating
+        'starRating': item.dataset.starRating,
+        'amount': item.dataset.amount
     }
 
-    item.orderNowBtn.href = `./purchaseSingleItem.html?name=${item.name}&price=${item.price}&type=${item.type}&stock=${item.stock}&imgName=${item.imgName}&description=${item.description}&ratingCount=${item.ratingCount}&starRating=${item.starRating}`
+    item.orderNowBtn.href = `./purchaseSingleItem.html?name=${item.name}&price=${item.price}&type=${item.type}&stock=${item.stock}&imgName=${item.imgName}&description=${item.description}&ratingCount=${item.ratingCount}&starRating=${item.starRating}&amount=${item.amount}`
 
     item.addToCartBtn.addEventListener('click', e => {
         const item = {
@@ -57,7 +58,8 @@ items.forEach(item => {
             'imgName': e.target.parentElement.parentElement.dataset.imgName,
             'addToCartBtn': e.target.parentElement.parentElement.querySelector('.btnWrapper').querySelector('.addToCart'),
             'starRating': e.target.parentElement.parentElement.dataset.starRating,
-            'ratingCount': e.target.parentElement.parentElement.dataset.ratingCount
+            'ratingCount': e.target.parentElement.parentElement.dataset.ratingCount,
+            'amount': e.target.parentElement.parentElement.dataset.amount
         }
         item.cartBtnBoundBox = item.addToCartBtn.getBoundingClientRect()
 
@@ -95,20 +97,35 @@ items.forEach(item => {
         delete item['addToCartBtn']
         delete item['orderNowBtn']
         delete item['select']
-        shoppingCart.push(item)
-        console.log(shoppingCart);
+        
+        let newItem = true
+        // console.log(item)
+        shoppingCart.forEach(cartItem => {
+            if (cartItem.name == item.name) {
+                newItem = false
+            }
+        })
+        
+        // adds a new item into the shopping cart
+        if (newItem) {
+            shoppingCart.push(item)
+            console.log(shoppingCart);
+        } else { // increments the amount of items when 1 is already in the cart
+            // increases the new items amount
+            item.amount = parseInt(shoppingCart[shoppingCart.indexOf(shoppingCart.find(x => x.name == item.name))].amount) + 1
+            if (item.amount > item.stock) item.amount = item.stock
 
+            // removes the old item
+            delete shoppingCart[shoppingCart.indexOf(shoppingCart.find(x => x.name == item.name))]
+            shoppingCart = shoppingCart.flat()
+            
+            // adds the new item to the cart
+            shoppingCart.push(item)
+        }
+
+        // finalizes the cart items to the cookies
         const date = new Date()
         date.setTime(date.getTime() + 2592000000)
         document.cookie = `shoppingCart=${JSON.stringify(shoppingCart)};expired=${date.toUTCString()};path=/;SameSite=None;Secure`
-
-        
-        
-
-        // console.log(tmpCookies);
-        
-
-
-
     })
 })
