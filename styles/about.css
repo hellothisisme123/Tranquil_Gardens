@@ -1,0 +1,100 @@
+.container {
+    margin-top: 10vh;
+}
+
+main {
+    width: 100%;
+}
+
+.missionStatementWrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.25fr 1fr;
+}
+
+.imgWrapper {
+    width: 100%;
+    clip-path: polygon(0 0, 80% 0%, 100% 100%, 0% 100%);
+}
+
+.imgWrapper > img {
+    max-width: 100%;
+}
+
+.statement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    gap: 1rem;
+}
+
+.statement h1 {
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.statement p {
+    font-size: 1.75rem;
+    line-height: 2;
+    max-width: 75%;
+}
+
+.statement .effect {
+    color: var(--color_1);
+    text-shadow: 0 0 3px var(--color_1);
+    text-decoration: underline;
+    font-weight: 900;
+}
+
+.theTeam {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1500px;
+    margin: 5rem auto;
+}
+
+.theTeam .title {
+    grid-column: span 2;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.theTeam .card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color_3);
+    padding: 1rem;
+    border-radius: 8px;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.theTeam .card h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.theTeam .card h1 .position {
+    opacity: 0.75;
+    font-size: 2rem;
+}
+
+.theTeam .card h1 .position::before {
+    content: '(';
+}
+
+.theTeam .card h1 .position::after {
+    content: ')';
+}
+
+.theTeam .card p {
+    font-size: 1.4rem;
+}
+
+.theTeam .card img {
+    max-width: 75%;
+    max-height: 30vh;
+    margin: 0 auto;
+}

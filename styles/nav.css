@@ -4,7 +4,7 @@ nav {
     height: 10vh;
     width: 100%;
     box-shadow: 0px 0px 5px 2px var(--color_2);
-    padding: 0 2rem;
+    padding: 0 5% 0 2rem;
     box-sizing: border-box;
     display: flex;
     align-items: center;
@@ -88,6 +88,16 @@ nav > .nav_icon {
     }
 }
 
+@media screen and (width <= 750px) {
+    nav {
+        /* padding: 0 2rem; */
+    }
+
+    nav > .nav_item {
+        font-size: 1.25rem;
+    }
+}
+
 @media screen and (width <= 600px) {
     nav {
         height: 100%;
@@ -97,6 +107,8 @@ nav > .nav_icon {
         justify-content: space-around;
         gap: 0;
         left: 0;
+        box-shadow: 0px 0px 5px 5px var(--color_1);
+        padding: 0;
     }
 
     nav::after {
@@ -189,7 +201,7 @@ nav > .nav_icon {
 
     nav > .nav_item:nth-child(odd):hover {
         background-color: var(--color_2);
-        box-shadow: 0px 0px 5px 2px var(--color_2);
+        box-shadow: none;
     }
 
     nav > .nav_item:nth-child(even):hover {

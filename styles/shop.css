@@ -80,7 +80,7 @@ body, html {
 }
 
 .item.maxedDesc > .description {
-    max-height: none;
+    max-height: 80vh;
     -webkit-mask-image: none;
 }
 
@@ -109,6 +109,7 @@ body, html {
     justify-content: center;
     align-items: center;
     position: relative;
+    text-align: center;
 }
 
 .item > .btnWrapper > a:hover, .item > .btnWrapper > button:hover {
@@ -120,6 +121,8 @@ body, html {
     flex-basis: 100%;
 }
 
+
+
 .leafIcon {
     position: absolute;
     width: 5vw;
@@ -127,6 +130,14 @@ body, html {
     user-select: none;
     pointer-events: none;
     filter: var(--black_to_light_filter_shadow);
+}
+
+@media screen and (width <= 1000px) {
+    .shopFront {
+        padding: 2rem 2rem;
+        gap: 3rem;
+    }
+
 }
 
 @media screen and (width <= 750px) {
@@ -141,6 +152,9 @@ body, html {
     .item > .expand-Btn {
         width: 15%;
     }
+
+    
+
 }
 
 @media screen and (width <= 600px) {
@@ -154,5 +168,15 @@ body, html {
 
     .item > .expand-Btn {
         width: 20%;
+    }
+    
+    .item {
+        flex-grow: 1;
+    }
+}
+
+@media screen and (width <= 400px) {
+    .shopFront {
+        padding: 2rem 0.5rem;
     }
 }
