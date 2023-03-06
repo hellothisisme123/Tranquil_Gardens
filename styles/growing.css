@@ -1,0 +1,36 @@
+.container {
+    margin-top: 10vh;
+}
+
+main {
+    max-width: 1280px;
+    gap: 30vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+section {
+    display: flex;
+    gap: 40%;
+}
+
+section .imgWrapper {
+    flex-basis: 25%;
+}
+
+section .imgWrapper img {
+    
+}
+
+section .words {
+    flex-grow: 1;
+}
+
+section .words h1 {
+    font-size: 3rem;
+}
+
+section .words p {
+    font-size: 2rem;
+}
