@@ -245,6 +245,89 @@
 
             <div class="contact_section store_complaint" data-type="store_complaint">
                 <h1 class="title" data-type="store_complaint">In Person Store Complaints</h1>
+
+                <div class="personalInfo">
+                    <h1>Contacts</h1>
+                    <form class="personalInfoForm">
+                        <label for="FirstName">
+                            Firstname: 
+                            <input type="text" id="FirstName" placeholder="(optional)">
+                        </label>
+
+                        <label for="Lastname">
+                            Lastname: 
+                            <input type="text" id="Lastname" placeholder="(optional)">
+                        </label>
+                        
+                        <label for="Gender">
+                            Gender: 
+                            <select id="Gender">
+                                <option value="Anon">Prefer not to answer</option>
+                                <option value="Man">Man</option>
+                                <option value="Woman">Woman</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </label>
+
+                        <label for="Email">
+                            Email: 
+                            <input type="email" id="Email" placeholder="(optional)">
+                        </label>
+
+                        <label for="PhoneNumber">
+                            Phone Number: 
+                            <input type="text" id="PhoneNumber" placeholder="(optional)">
+                        </label>
+                    </form>
+                </div>
+                <div class="complaintDetails">
+                    <h1>Complaint Details</h1>
+                    <form class="complainDetailsForm">
+                        <label for="reason">
+                            Reason For Complaint: 
+                            <select id="reason">
+                                <option value="Other">Other</option>
+                                <option value="WorkerProblem">Worker Problem</option>
+                                <option value="CustomerProblem">Customer Problem</option>
+                                <option value="BrokenItem">Broken Item</option>
+                            </select>
+                        </label>
+
+                        <label for="Cost">
+                            Around how much money did it set you back? (leave empty if it's not about money) 
+                            <input type="text" id="Cost" placeholder="(optional)">
+                        </label>
+
+                        <label for="whocausedit">
+                            What worker caused the problem assuming it was a worker? 
+                            <select id="whocausedit">
+                                <option value="Customer">Customer</option>
+                                <option value="Unknown">Unknown</option>
+                                <option value="Other">Other</option>
+                                <option value="Kira">Kira</option>
+                                <option value="Vladimir">Vladimir</option>
+                                <option value="Sandra">Sandra</option>
+                                <option value="Lee">Lee</option>
+                                <option value="Yong">Yong</option>
+                                <option value="Blake">Blake</option>
+                                <option value="Ekin">Ekin</option>
+                                <option value="Glaucia">Glaucia</option>
+                            </select>
+                        </label>
+
+                        <label for="personwhocauseditsdescription">
+                            Give a description of the person who caused your issue:
+                            <textarea type="text" id="personwhocauseditsdescription" placeholder="(required)" required></textarea>
+                        </label>
+
+                        <label for="problem">
+                            Give a description of your problem, how it occured, and how it effected you:
+                            <textarea type="text" id="problem" placeholder="(required)" required></textarea>
+                        </label>
+                        
+                        <button type="submit" class="submitBtn">Submit</button>
+                    </form>
+                </div>
             </div>
             
         </div>

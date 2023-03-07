@@ -215,11 +215,61 @@ button[type="submit"]:active, button[type="submit"]:focus, button[type="submit"]
     grid-template-rows: 3rem 1fr;
 }
 
+.transitional {
+    overflow-y: scroll;
+}
 
 
 
+/* in store complaints */
+.contact_section.store_complaint * {
+    color: var(--color_2);
+}
 
+.contact_section.store_complaint input, .contact_section.store_complaint select, .contact_section.store_complaint option, .contact_section.store_complaint textarea, .contact_section.store_complaint button {
+    background-color: var(--color_4);
+    border: 2px solid var(--color_2);
+}
 
+.contact_section.store_complaint {
+    padding-top: 10vh;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 10fr;
+}
+
+.contact_section.store_complaint h1 {
+    grid-column: span 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+.store_complaint > .personalInfo {
+    position: relative;
+    height: 100%;
+}
+
+.store_complaint > .personalInfo > form {
+    gap: 1rem;
+    overflow-y: hidden;
+}
+
+.store_complaint > .personalInfo::after {
+    content: '';
+    height: 85%;
+    position: absolute;
+    left: 100%;
+    top: 50%;
+    translate: -50% -50%;
+    width: 0.5vw;
+    border-radius: 1000px;
+    background-color: var(--color_2);
+    filter: drop-shadow(0 0 2px var(--color_1));
+    display: block;
+
+}
 
 
 
@@ -283,4 +333,10 @@ button[type="submit"]:active, button[type="submit"]:focus, button[type="submit"]
     background-color: var(--color_1);
 }
 
-footer {}
+
+
+
+
+
+
+
