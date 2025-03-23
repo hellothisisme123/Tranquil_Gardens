@@ -63,6 +63,10 @@ html {
     /* height: 20%; */
 }
 
+.content img {
+    max-height: 64px;
+}
+
 @media screen and (width >= 1900px) {
     .content_item:nth-child(2n) { /* second collumn */
         border-right: none;   
