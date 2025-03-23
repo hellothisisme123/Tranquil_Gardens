@@ -64,7 +64,7 @@ html {
 }
 
 .content img {
-    max-height: 128px;
+    max-height: 86px;
 }
 
 @media screen and (width >= 1900px) {
